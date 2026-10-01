@@ -18,7 +18,8 @@ Un programa de consola que simula el monitor interno de UDITflix: comprueba si c
 
 
 
-<!-- ![Captura de la consola](captura.png) -->
+<img width="372" height="570" alt="image" src="https://github.com/user-attachments/assets/2ddc1646-8efc-4745-890d-8b99b3a07eae" />
+
 
 ---
 
