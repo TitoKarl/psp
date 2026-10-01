@@ -16,6 +16,8 @@ Un programa de consola que simula el monitor interno de UDITflix: comprueba si c
 
 > *Sustituye la captura de abajo por la de tu propia ejecución antes de entregar.*
 
+
+
 <!-- ![Captura de la consola](captura.png) -->
 
 ---
@@ -25,19 +27,19 @@ Un programa de consola que simula el monitor interno de UDITflix: comprueba si c
 Responde **antes** de escribir una sola línea de código. No importa si te equivocas: lo importante es dejar escrito qué pensabas.
 
 1. **Con mis palabras, ¿qué me pide el reto?** *(sin copiar el enunciado)*
-   *(escribe aquí)*
+   *(El reto pide que al añadir unos datos al codigo interno de la app, que en la terminal salgan unos resultados predeterminados)*
 
 2. **¿Qué parte de la píldora de clase creo que voy a reutilizar?**
-   *(escribe aquí)*
+   *(La parte que voy a reutilizar mas es la parte del for it, debido a que esto nos permite añadir mas datos a largo plazo)*
 
 3. **¿Qué parte me da más respeto o no sé por dónde empezar?**
-   *(escribe aquí)*
+   *(La parte que mas me cuesta empezar es en la seccion de processbuilder debido a las especificaciones que pide)*
 
 4. **Mi plan en 3-4 pasos, en orden:**
-   *(escribe aquí)*
+   *(Primero agregaria los datos dentro del programa, luego estableceria si estan activos/inactivos segun su ip, luego revisaria si esta todo correcto y luego ejecutaria el programa)*
 
 5. **Predicción:** si todas las direcciones fueran `127.0.0.1`, ¿qué estado saldría en los cinco elementos? ¿Y si todas fueran direcciones inexistentes?
-   *(escribe aquí, y comprueba al final si acertaste)*
+   *(Si todas las direcciones fueran 127.0.0.1 saldrian todas activas, y si fueran inexistentes, nos daria un error)*
 
 ---
 
@@ -66,8 +68,8 @@ Rellena la columna "con mis palabras" **sin mirar tus apuntes**. Después compar
 **¿Qué contiene cada posición de mi matriz?**
 
 ```
-matriz[i][0] →  (completa)
-matriz[i][1] →  (completa)
+matriz[i][0] →  (El nombre del proceso)
+matriz[i][1] →  (La IP del proceso)
 ```
 
 ---
@@ -88,12 +90,12 @@ Cada vez que **te atasques, cambies de idea o algo falle**, anota una entrada. T
 
 | Qué intentaba | Qué pasó realmente | Qué hice / qué aprendí |
 |---|---|---|
-| *(ejemplo)* Mostrar el estado de cada elemento | Todos salían ACTIVO, incluso los que debían estar caídos | Revisé qué devolvía `waitFor()` para una dirección inexistente y vi que... |
+| *(Intentaba hacer que no salieran algunos datos inecesarios, pero no pude eliminarlos, asi que encontre por donde se creaban y los elimine)* Mostrar el estado de cada elemento | Todos salían ACTIVO, incluso los que debían estar caídos | Revisé qué devolvía `waitFor()` para una dirección inexistente y vi que... |
 | | | |
 | | | |
 | | | |
 
-**Mi pregunta-brújula cuando me bloqueo:**
+**Mi pregunta-brújula cuando me bloqueo:** 
 1. ¿Qué espero que haga esta línea?
 2. ¿Qué está haciendo realmente? (imprimo valores para comprobarlo)
 3. ¿En qué punto exacto se separan las dos respuestas?
@@ -105,40 +107,40 @@ Cada vez que **te atasques, cambies de idea o algo falle**, anota una entrada. T
 La píldora lanzaba **un** proceso. El reto lanza **cinco**. Explica ese salto con tus palabras:
 
 - **¿Qué tenía la píldora que ya no me sirve tal cual?**
-  *(escribe aquí)*
+  *(El buffer no me servia, ya que el resultado no era el que esperaba)*
 
 - **¿Qué he tenido que añadir para repetirlo cinco veces? ¿Por qué esa estructura y no otra?**
-  *(escribe aquí)*
+  *(He tenido que agregar un for it)*
 
 - **¿Qué parte del código es exactamente igual en todas las vueltas del bucle y qué parte cambia?**
-  *(escribe aquí)*
+  *(La parte igual dentro del codigo siempre tendira que ser los ESTADOS)*
 
 - **Si mañana UDITflix tuviera 500 elementos en lugar de 5, ¿qué tendría que cambiar en mi código?**
-  *(escribe aquí)*
+  *(Tendria que cambiar el for it de 5 a 500)*
 
 ---
 
 ## 🧠 Qué he aprendido
 
-*(Completar al terminar. Redacta con tus palabras, no con las del enunciado.)*
+*(He aprendido a añadir datos y hacer que el sistema reconozca cuales son correctos para dar un resultado concreto.)*
 
 - **Hilo vs. proceso:** la diferencia entre ambos es...
 - **PID:** lo que representa y por qué cambia en cada ejecución es...
 - **`start()` vs. `waitFor()`:** lanzar un proceso y esperarle son cosas distintas porque...
 - **Código de salida:** lo que significa que sea `0` o distinto de `0` es...
-- **Lo que mi programa decide sobre ACTIVO / CAÍDO se basa en...** *(¿es fiable? ¿en qué casos podría equivocarse?)*
+- **Lo que mi programa decide sobre ACTIVO / CAÍDO se basa en...** *(Se basa en la IP)*
 
 ---
 
 ## 🐞 Dificultades y cómo las resolví
 
-*(Completar antes de entregar. Reúne lo más importante de tu diario de decisiones.)*
+*()*
 
 - **Dificultad 1:**
-  - Qué síntoma vi:
-  - Cuál era la causa real:
-  - Cómo la encontré:
-  - Cómo evitaré que me vuelva a pasar:
+  - Qué síntoma vi: Encontrar el problema de la ejecucion
+  - Cuál era la causa real: No tenia la version de JAVA correcta
+  - Cómo la encontré: Viendo la version de JAVA que tenia instalada
+  - Cómo evitaré que me vuelva a pasar: Revisando la version antes de iniciar un proyecto
 
 - **Dificultad 2:** *(opcional)*
 
@@ -187,4 +189,4 @@ README.md                    → este documento
 
 ## 🔗 Enlace
 
-- GitHub: *(tu repositorio)*
+- GitHub: *(https://github.com/TitoKarl/psp/tree/main/Reto01_monitor_uditflix)*
