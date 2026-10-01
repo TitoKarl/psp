@@ -4,14 +4,13 @@ import java.io.InputStreamReader;
 
 public class PildoraMonitor {
 
-    public static void mai(String[] args) {
+    public static void main(String[] args) {
         System.out.println("===MONITOR UDITFLIX===");
         System.out.println("Combrobando servicio...");
 
         // TRY CATCH
         // Lanzar un programa externo o esperar a que termine PUEDE FALLAR
         // try -> "Si algo sale mal, ha esto en otro en vez de romper el programa"
-
         try {
         // ProcessBuilder es el "encargado" que prepara la orden que
         // le daremos al sistema operativo. Es como rellenar un formulario
