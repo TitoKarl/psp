@@ -6,9 +6,9 @@ import java.sql.SQLOutput;
 
 public class CodigoSalida {
     public static void main(String[] args){
-        System.out.println("====================");
+        System.out.println("===========================");
         System.out.println("COMPROVACION DE SERVIDOR");
-        System.out.println("====================");
+        System.out.println("===========================");
 
         try {
             // 1 PREPARAMOS EL PROCESO EXTERNO
@@ -56,8 +56,8 @@ public class CodigoSalida {
             System.out.println("EL PROCESO FUE INTERRUMPIDO");
         }
 
-        System.out.println("================");
+        System.out.println("===========================");
         System.out.println("FIN DE LA COMBROBACION");
-        System.out.println("================");
+        System.out.println("===========================");
     }
 }
