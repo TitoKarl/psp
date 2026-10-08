@@ -20,28 +20,6 @@ Un programa de consola que simula la **primera fase de una auditoría de UDITver
 3. Lee el **código de salida** de cada una.
 4. Según el resultado combinado, **toma una decisión** y abre una aplicación del sistema (Bloc de Notas o Calculadora).
 
-```
-        ┌──────────────┐
-        │  Mi programa │
-        │   (Java)     │
-        └──────┬───────┘
-               │ start()          start()
-        ┌──────┴──────┐    ┌──────┴──────┐
-        ▼                         ▼
-  ┌───────────┐             ┌───────────┐
-  │  ping A   │             │  ping B   │   ← corren a la vez
-  └─────┬─────┘             └─────┬─────┘
-        │ waitFor()               │ waitFor()
-        └───────────┬─────────────┘
-                    ▼
-          ¿códigos de salida?
-                    │
-        ┌───────────┴───────────┐
-        ▼                       ▼
-   Bloc de Notas           Calculadora
-```
-
-*(Ajusta el esquema y los nombres a lo que hace realmente tu programa.)*
 ![alt text](image.png)
 📸 **Sustituye esto por una captura de tu propia ejecución antes de entregar.**
 
@@ -136,9 +114,7 @@ t=3s   waitFor(A) ✔  waitFor(B) ✔
 
 **Mi orden real de llamadas, copiado de mi código** *(pega solo las líneas relevantes)*:
 
-```java
-// (pega aquí tus llamadas a start() y waitFor() en el orden en que aparecen)
-```
+
 ![alt text](image-1.png)
 
 ---
@@ -211,9 +187,6 @@ Cada vez que te atasques, cambies de idea o algo falle, anota una entrada. Tres 
 
 **Escribe aquí la condición `if` exacta que has programado. Explica por qué has utilizado `&&` o `||` para decidir si abrir el Bloc de Notas o la Calculadora.**
 
-```java
-// (pega aquí tu if exacto)
-```
 ![alt text](image-2.png)
 
 *(He puesto el `||` para que cuando solo 1 de los exit no de 0, ya directamente nos de la calculadora)*
