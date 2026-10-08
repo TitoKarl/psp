@@ -70,7 +70,7 @@ Responde **antes** de escribir una sola línea de código. No importa si te equi
 
 | Escenario | ¿Qué código de salida espero en cada ping? | ¿Qué aplicación se abre? |
 |---|---|---|
-| Los dos pings a `127.0.0.1` |*(En el primer ping 1 sale el codigo 0, se ejecuta el notepad)* | *(En el primer ping 1 sale el codigo 0, se ejecuta el notepad)* | 
+| Los dos pings a `127.0.0.1` |*(En el primer ping 1 sale el codigo 0, se ejecuta el notepad)* | *(En el primer ping 2 sale el codigo 0, se ejecuta el notepad)* | 
 | Un ping válido y otro a una dirección inexistente |*(En el primer ping 1 sale el codigo 0, se ejecuta el calc)* |*(En el primer ping 2 sale el codigo 1, se ejecuta el calc)* |                                                     
 | Los dos pings a direcciones inexistentes |*(En el primer ping 1 sale el codigo 1, se ejecuta el calc)* |*(En el primer ping 2 sale el codigo 1, se ejecuta el calc)* |   
 
@@ -181,7 +181,7 @@ Cada vez que te atasques, cambies de idea o algo falle, anota una entrada. Tres 
 | | | |
 
 **Mi pregunta-brújula cuando me bloqueo:**
-1. ¿Qué espero que haga esta línea?
+1. ¿Qué espero que haga esta línea? 
 2. ¿Qué está haciendo realmente? *(imprimo valores para comprobarlo)*
 3. ¿En qué punto exacto se separan las dos respuestas?
 
@@ -195,7 +195,7 @@ Cada vez que te atasques, cambies de idea o algo falle, anota una entrada. Tres 
 
 **¿Qué líneas exactas garantizan que los dos pings se ejecutan a la vez? ¿Qué ocurriría físicamente si pusieras el primer `waitFor()` justo antes de lanzar el segundo `start()`?**
 
-*(escribe aquí)*
+*(Lo que nos permite que los 2 pings se ejecuten al mismo tiempo es el waitFor, si pusieramos el waitFor antes de lanzar el segundo start, el waitFor esperaria al primer start a que termine para iniciar el segundo)*
 
 *Pistas: ¿qué hace `start()` con el hilo principal de mi programa? ¿Quién ejecuta el ping: mi programa o el sistema operativo? ¿Cuántos procesos existen en ese momento en cada caso? ¿Cuánto tardaría el programa completo?*
 
@@ -203,7 +203,7 @@ Cada vez que te atasques, cambies de idea o algo falle, anota una entrada. Tres 
 
 **¿Qué tipo de dato devuelve `waitFor()`? ¿Qué significa en el estándar de los sistemas operativos que ese valor sea `0` o distinto de `0`?**
 
-*(escribe aquí)*
+*(Nos devuelve el resultado que hayamos puesto a los ProcessBuilder, en este caso seria para los Exit Code)*
 
 *Pistas: piensa en "0 = todo fue bien". ¿Por qué crees que el estándar eligió precisamente el 0 para el éxito y deja los demás números libres? ¿Qué información extra pueden aportar los valores distintos de 0? ¿Es lo mismo "el ping falló" que "el programa ping no pudo ejecutarse"?*
 
@@ -216,7 +216,7 @@ Cada vez que te atasques, cambies de idea o algo falle, anota una entrada. Tres 
 ```
 ![alt text](image-2.png)
 
-*(explica aquí tu razonamiento)*
+*(He puesto el `||` para que cuando solo 1 de los exit no de 0, ya directamente nos de la calculadora)*
 
 *Pistas: ¿qué debe pasar para que se abra cada aplicación? Si usaras el operador contrario, ¿en qué fila de mi tabla de verdad cambiaría el resultado? ¿Qué pasaría si uno de los dos pings falla y el otro no?*
 
@@ -224,7 +224,7 @@ Cada vez que te atasques, cambies de idea o algo falle, anota una entrada. Tres 
 
 **Tu código incluye un bloque `try/catch`. Describe una situación real (un fallo del sistema o una mala configuración) que provocaría que tu programa entrase en el `catch` de `IOException`.**
 
-*(escribe aquí)*
+*(Si algunos de los Ping no estuvieran bien configurados, nos saldria el error IOException)*
 
 *Pistas: `IOException` salta cuando Java **no consigue ni arrancar** el proceso. ¿Qué pasaría si escribo mal el nombre del ejecutable (`notepd.exe`)? ¿Y si ejecuto en un sistema operativo donde ese programa no existe? ¿En qué se diferencia esto de que el ping "falle" y devuelva un código distinto de 0?*
 
@@ -252,16 +252,16 @@ Durante la defensa te pediré pequeñas modificaciones. Practica estas **antes**
 El Reto 1 lanzaba procesos **uno tras otro** dentro de un bucle. El Reto 2 los lanza **a la vez**. Explica ese salto con tus palabras:
 
 **¿Qué hacía mi Reto 1 que aquí ya no me sirve tal cual?**
-*(escribe aquí)*
+*(Ejecutaba los videos, los cambie por otros datos)*
 
 **¿Qué he tenido que cambiar para que dos procesos corran simultáneamente?**
-*(escribe aquí)*
+*(Tuve que cambiar los WaitFor)*
 
 **¿Qué ventaja tiene lanzar en paralelo? ¿Y qué problema nuevo aparece cuando dependo de dos resultados a la vez?**
-*(escribe aquí)*
+*(Que tarda menos, pero el problema es que si uno falla, los 2 fallan)*
 
 **Si mañana el pipeline tuviera 50 comprobaciones en lugar de 2, ¿seguiría teniendo sentido mi estructura de código? ¿Qué cambiaría?**
-*(escribe aquí)*
+*(No, tendira que añadir el numero de comprovaciones que hay)*
 
 ---
 
@@ -283,10 +283,10 @@ El Reto 1 lanzaba procesos **uno tras otro** dentro de un bucle. El Reto 2 los l
 > *(Completar antes de entregar. Reúne lo más importante de tu diario de decisiones.)*
 
 **Dificultad 1:**
-- Qué síntoma vi:
-- Cuál era la causa real:
-- Cómo la encontré (¿apuntes? ¿documentación oficial? ¿depuración?):
-- Cómo evitaré que me vuelva a pasar:
+- Qué síntoma vi: El programa no mostraba los exit errors bien
+- Cuál era la causa real: No tenia los waitFor bien configurados
+- Cómo la encontré (¿apuntes? ¿documentación oficial? ¿depuración?): Ejecute el codigo paso a paso para ver en que fallaba
+- Cómo evitaré que me vuelva a pasar: Estando atento al codigo
 
 **Dificultad 2:** *(opcional)*
 
@@ -334,7 +334,7 @@ src/main/java/org/example/   → clase con el main (el pipeline de auditoría)
 README.md                    → este documento
 ```
 
-*(Ajusta la estructura a la de tu proyecto.)*
+*()*
 
 ## 🔗 Enlace
 
