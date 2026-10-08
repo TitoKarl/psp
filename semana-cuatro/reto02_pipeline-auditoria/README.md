@@ -139,8 +139,8 @@ t=3s   waitFor(A) ✔  waitFor(B) ✔
 
 ```java
 // (pega aquí tus llamadas a start() y waitFor() en el orden en que aparecen)
-![alt text](image-1.png)
 ```
+![alt text](image-1.png)
 
 ---
 
@@ -214,8 +214,8 @@ Cada vez que te atasques, cambies de idea o algo falle, anota una entrada. Tres 
 
 ```java
 // (pega aquí tu if exacto)
-![alt text](image-2.png)
 ```
+![alt text](image-2.png)
 
 *(explica aquí tu razonamiento)*
 
