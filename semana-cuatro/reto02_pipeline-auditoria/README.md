@@ -70,11 +70,10 @@ Responde **antes** de escribir una sola línea de código. No importa si te equi
 
 | Escenario | ¿Qué código de salida espero en cada ping? | ¿Qué aplicación se abre? |
 |---|---|---|
-| Los dos pings a `127.0.0.1` | *(En el primer ping 1 sale el codigo 0, se ejecuta el notepad)* | *(En el primer ping 2 sale el codigo 0, se ejecuta el notepad)* | 
-| Un ping válido y otro a una dirección inexistente | *(En el primer ping 1 sale el codigo 0, se ejecuta la calculadora)* | 
-|                                                     *(En el primer ping 2 sale el codigo 1, se ejecuta la calculadora)* |
-| Los dos pings a direcciones inexistentes | *(En el primer ping 1 sale el codigo 1, se ejecuta la calculadora)* | 
-|                                            *(En el primer ping 2 sale el codigo 1, se ejecuta la calculadora)* |
+| Los dos pings a `127.0.0.1` |*(En el primer ping 1 sale el codigo 0, se ejecuta el notepad)* | *(En el primer ping 1 sale el codigo 0, se ejecuta el notepad)* | 
+| Un ping válido y otro a una dirección inexistente |*(En el primer ping 1 sale el codigo 0, se ejecuta el calc)* |*(En el primer ping 2 sale el codigo 1, se ejecuta el calc)* |                                                     
+| Los dos pings a direcciones inexistentes |*(En el primer ping 1 sale el codigo 1, se ejecuta el calc)* |*(En el primer ping 2 sale el codigo 1, se ejecuta el calc)* |   
+
 
 **Predicción de tiempo:** si cada ping tarda unos 3 segundos, ¿cuánto tardará mi programa en total si los lanzo en paralelo? ¿Y si los lanzara uno detrás de otro?
 *(Si el ping tarda 3 segundos, en paralelo tardaria 3 segundos y uno detras de otro tardaria 6 segundos)*
