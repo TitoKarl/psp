@@ -336,3 +336,11 @@ README.md                    → este documento
 ## 🔗 Enlace
 
 GitHub: *(tu repositorio)*
+
+*(1. Mundo real: ¿qué sistemas profesionales (por ejemplo, pasarelas de pago o servicios en la nube como AWS) utilizan el patrón Retry?)*
+
+Algunos sistemas reales que usan el patron Retry pueden ser al realizar un pago, iniciar sesion o enviar un correo
+
+*(2. Reflexión sobre tus tiempos: comparando los tiempos que has medido, si tuvieras que auditar 50 servidores con problemas de conexión, ¿por qué es importante limitar los reintentos?)*
+
+Por que si hubiera que realizar un reintento por servidor tardaria mucho, lo que habria que hacer el limitar por ejemplo 10 servidores, si esos 10 servidores fallan, se terminaria el proceso de conexion
